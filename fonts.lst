@@ -1,0 +1,8 @@
+sc fonts/DejaVuSansCondensed.ttf
+scb fonts/DejaVuSansCondensed-Bold.ttf
+sco fonts/DejaVuSansCondensed-Oblique.ttf
+arialbd fonts/arialuni.ttf
+arial fonts/arialuni.ttf
+uni fonts/unifont-5.1.ttf
+thon fonts/Thonburi.ttf
+thonb fonts/ThonburiBold.ttf

@@ -9,6 +9,7 @@ required
 * Postgresql/Postgis 2.x
 * shptree
 * unzip
+* python-virtualenv
 * imposm
 
 database
@@ -25,4 +26,9 @@ Doawload data and import in database
     source venv/bin/activate
     sudo pip install imposm
     make
-    make imposm 
+    make imposm
+
+test
+----
+
+http://yourserver/cgi-bin/mapserv?map=/your/path/osmbase.map&LAYERS=default&template=openlayers 

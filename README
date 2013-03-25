@@ -1,0 +1,9 @@
+== osmbase ==
+Simple QA projet to build quickly a mapserver mapping project with Open Street Map.  This osm mapfile is build with Basemaps for Mapserver.
+
+Required shptree, unzip, imposm
+
+== Instructions ==
+
+    make
+    make imposm 

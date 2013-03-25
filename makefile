@@ -15,25 +15,26 @@ IMPOSM_PGCON = postgis://$(USER):$(PGPWD)@$(HOST):$(PORT)/$(DBNAME)
 SHPTREE = shptree
 
 
-all: TM_WORLD_BORDERS-0.3.shp processed_p.shp shoreline_300.shp connection
+all: ./data/TM_WORLD_BORDERS-0.3.shp ./data/processed_p.shp ./data/shoreline_300.shp osmbase.map
 imposm: imposm_write
 
-connection: osmbase.map
+osmbase.map: osmbase_sample.map
 	cp osmbase_sample.map osmbase.map
 	sed -i "s/host=host dbname=dbname user=user password=password port=port/host=$(HOST) dbname=$(DBNAME) user=$(USER) password=$(PGPWD) port=$(PORT)/g" osmbase.map
 	touch osmbase.map
 
-processed_p.shp: processed_p.tar.bz2
+./data/processed_p.shp: processed_p.tar.bz2
 	tar xmjf processed_p.tar.bz2 -C ./data
 	shptree ./data/processed_p.shp
 	touch ./data/processed_p.shp
 
-shoreline_300.shp: shoreline_300.tar.bz2
+./data/shoreline_300.shp: shoreline_300.tar.bz2
 	tar xmjf shoreline_300.tar.bz2 -C ./data
 	shptree ./data/shoreline_300.shp
 	touch ./data/shoreline_300.shp
 
-TM_WORLD_BORDERS-0.3.shp: TM_WORLD_BORDERS-0.3.zip
+./data/TM_WORLD_BORDERS-0.3.shp: TM_WORLD_BORDERS-0.3.zip
+	mkdir data
 	unzip -o TM_WORLD_BORDERS-0.3.zip -d ./data
 	shptree ./data/TM_WORLD_BORDERS-0.3.shp
 	touch ./data/TM_WORLD_BORDERS-0.3.shp

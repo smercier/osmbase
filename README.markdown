@@ -21,5 +21,8 @@ instructions
 ------------
 Doawload data and import in database
 
+    sudo virtualenv venv
+    source venv/bin/activate
+    sudo pip install imposm
     make
     make imposm 

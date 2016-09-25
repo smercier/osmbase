@@ -9,8 +9,8 @@ USER = osm
 PGPWD = osm
 
 #imposm
-DOWNLOAD = 'http://download.geofabrik.de/australia-oceania/new-caledonia-latest.osm.bz2'
-REGION = new-caledonia-latest.osm.bz2
+DOWNLOAD = 'http://download.geofabrik.de/africa/senegal-and-gambia-latest.osm.bz2'
+REGION = senegal-and-gambia-latest.osm.bz2
 IMPOSM_PGCON = postgis://$(USER):$(PGPWD)@$(HOST):$(PORT)/$(DBNAME)
 SHPTREE = shptree
 
